@@ -1,7 +1,8 @@
-version: '2'
+version: '2.2'
 services:
   jenkins:
-    image: jenkins/jenkins:lts
+    image: jenkins:1.0
+    container_name: tender_snyder
     ports:
       - "8080:8080"
       - "50000:50000"
@@ -20,7 +21,8 @@ services:
     volumes:
       - /var/postgres-data:/var/lib/postgresql/data
   sonarqube:
-    image: sonarqube:lts
+    image: sonarqube
+    container_name: sonarqube
     ports:
       - "9000:9000"
       - "9092:9092"
